@@ -1,6 +1,18 @@
 # save-command
-Have a long command you need to type out manually multiple times? Or terminal session ends offten requiring you to re-enter commands every time?
-This module solves that! Setup the command, Confifure it and BOOM its now a few keystrokes to type instead of a arthritis inducingly long command!
+Have a long command you need to type out manually multiple times? Or terminal session ends often requiring you to re-enter commands every time?
+This module solves that! Setup the command, Configure it and BOOM its now a few keystrokes to type instead of a arthritis inducingly long command!
+
+### install
+
+**npm**
+```
+npm i save-command -g
+```
+
+**yarn**
+```
+yarn global add save-command
+```
 
 ### USAGE:
 set - sets up the command(Your command needs to be surrounded by quotes). Use "#varname" as placeholders for variables.
