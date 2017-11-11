@@ -5,7 +5,7 @@ This module solves that! Setup the command, Confifure it and BOOM its now a few 
 ### USAGE:
 set - sets up the command(Your command needs to be surrounded by quotes). Use "#varname" as placeholders for variables.
   save-command set test-command "<your command>"
-  save-command set test-command "echo $somthing && cd $longpath"
+  save-command set test-command "echo #somthing && cd #longpath"
 
 load - loads & executes the command
   save-command load hello-world
