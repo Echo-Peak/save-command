@@ -1,0 +1,15 @@
+{
+  "name": "save-command",
+  "version": "1.0.0",
+  "description": "Have a long command you need to type out manually multiple times? This module solves that!",
+  "main": "main.js",
+  "author": "michael wheeler",
+  "license": "MIT",
+  "bin": {
+    "save-command": "bin/main.js",
+    "scommand": "bin/main.js"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.2"
+  }
+}
