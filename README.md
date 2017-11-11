@@ -3,9 +3,9 @@ Have a long command you need to type out manually multiple times? Or terminal se
 This module solves that! Setup the command, Confifure it and BOOM its now a few keystrokes to type instead of a arthritis inducingly long command!
 
 ### USAGE:
-set - sets up the command(Your command needs to be surrounded by quotes). Use "${delimiter}<name>" as placeholders for variables.
-  save-command set test-command "<your command>"
-  save-command set test-command "echo $somthing && cd $longpath"
+set - sets up the command(Your command needs to be surrounded by quotes). Use "#varname" as placeholders for variables.
+  save-command set test-command "your command"
+  save-command set test-command "echo #somthing && cd #longpath"
 
 load - loads & executes the command
   save-command load hello-world
