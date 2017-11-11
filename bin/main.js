@@ -58,7 +58,7 @@ class SaveCommands{
     if(process.platform === 'win32'){
       this.configFile = `${process.env.USERPROFILE}\\AppData\\Local\\${appname}\\${configName}`;
     }else if(process.platform === 'darwin'){
-      this.configFile = `/Users/${process.env.USER}/library/Application Support/${appname}/${configName}`;
+      this.configFile = `/Users/${process.env.USER}/Library/Application Support/${appname}/${configName}`;
     }else{ //linux
       this.configFile = `/var/tmp/${appname}/${configName}`;
     }
