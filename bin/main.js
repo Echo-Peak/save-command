@@ -2,6 +2,7 @@
 const fs = require('fs-extra');
 const child_process = require('child_process');
 const readline = require('readline');
+const util = require('util');
 
 const appname = 'save-command';
 const configName = 'config.json';
@@ -39,6 +40,8 @@ config - Starts the configurator for a command(interactive).
 del - Deletes a command from the config
   save-command del hello-world
 
+view - Displays the config file
+  save-command view
 EXAMPLE:
 
 ${JSON.stringify(sample ,null, 2)}
@@ -67,7 +70,7 @@ class SaveCommands{
       fs.ensureDirSync(configBase);
       fs.writeJsonSync(this.configFile, sample, {spaces:2});
     }
-    
+
     let action = args[0];
     if(!action){
       usage(this.configFile);
@@ -77,8 +80,18 @@ class SaveCommands{
     case 'load': this.load(); break;
     case 'set': this.set(); break;
     case 'del': this.del(); break;
+    case 'view': this.view(); break;
     case 'config': this.configCommand(); break;
     }
+  }
+  view(){
+    const { configFile } = this;
+    fs.readJson(configFile , (err, result)=> {
+      if(err){
+        throw new Error(`There was a error reading "${configFile}". Error: ${err.toString()}`);
+      }
+      console.log(util.inspect(result, {depth: null, colors: true}));
+    });
   }
   load(){
     const { args, configFile } = this;

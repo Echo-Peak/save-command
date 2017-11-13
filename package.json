@@ -1,6 +1,6 @@
 {
   "name": "save-command",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Have a long command you need to type out manually multiple times? This module solves that!",
   "main": "main.js",
   "author": "michael wheeler",
