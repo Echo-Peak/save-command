@@ -67,6 +67,7 @@ class SaveCommands{
       fs.ensureDirSync(configBase);
       fs.writeJsonSync(this.configFile, sample, {spaces:2});
     }
+    console.log(args);
     let action = args[0];
     if(!action){
       usage(this.configFile);
@@ -106,7 +107,7 @@ class SaveCommands{
     }
     let newCommand = {vars:{}};
     let command = args[2];
-    if(!command.length){
+    if(!command || !command.length){
       throw new Error(`"${runCommand}" requires a command to be set`);
     }
     let vars = command.match(delimiterRegex);
@@ -154,10 +155,13 @@ class SaveCommands{
     });
   }
   exec(runCommand, command){
-    let child = child_process.exec(command);
-
-    child.stderr.pipe(process.stdout);
-    child.stdout.pipe(process.stdout);
+    let exec = '/bin/sh';
+    let prepend = 'bash';
+    if(process.platform === 'win32'){
+      exec = 'cmd.exe';
+      prepend = '/c';
+    }
+    let child = child_process.spawn(exec , [prepend, command], {stdio:'inherit'});
   }
   configCommand(){
     const { args, configFile } = this;

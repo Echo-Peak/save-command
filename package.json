@@ -1,10 +1,11 @@
 {
   "name": "save-command",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Have a long command you need to type out manually multiple times? This module solves that!",
   "main": "main.js",
   "author": "michael wheeler",
   "license": "MIT",
+  "url" : "https://github.com/Echo-Peak/save-command",
   "bin": {
     "save-command": "bin/main.js",
     "scommand": "bin/main.js"
