@@ -67,7 +67,7 @@ class SaveCommands{
       fs.ensureDirSync(configBase);
       fs.writeJsonSync(this.configFile, sample, {spaces:2});
     }
-    console.log(args);
+    
     let action = args[0];
     if(!action){
       usage(this.configFile);
